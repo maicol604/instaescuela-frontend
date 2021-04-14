@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import utils from '../../Utils';
+
 const PostWrapper = styled.div`
     margin: .5em;
     border-radius: 1em;
@@ -9,6 +11,15 @@ const PostWrapper = styled.div`
     .content {
         padding: 1em;
     }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+        border-bottom: 1px solid var(--soft-border-color);
+        .date {
+            color: var(--secondary-text-color)
+        }
+    }
 `;
 
 const Post = ({data}) => {
@@ -16,11 +27,12 @@ const Post = ({data}) => {
         return (
             <PostWrapper>
                 <div>
-                    <div>
-                        avatar
+                    <div className='header'>
+                        <div>Avatar</div>
+                        <div className='date'>{utils.formatDate(data.timestamp)+''}</div>
                     </div>
                     <span>
-                        <img src={data.thumbnail} alt=''/>
+                        <img src={data.media_url} alt=''/>
                     </span>
                     <div className='content'>
                         {data.caption}

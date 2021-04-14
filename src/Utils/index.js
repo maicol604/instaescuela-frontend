@@ -32,6 +32,37 @@ const utils = {
         // x * 10 ^ (-decimales)
         num = num.toString().split('e');
         return signo * (num[0] + 'e' + (num[1] ? (+num[1] - decimales) : -decimales));
+    },
+    formatDate: (date) => {
+        const months = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
+        let dateToReturn;
+        try {
+            let newDate = new Date(date);
+            let hour = parseInt(date.split('T')[1].split(':')[0])
+            let hours = (hour>12)?(hour-12):hour;
+            dateToReturn = `${months[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()} ${hours}:${newDate.getMinutes()} ${(hour>12)?'PM':'AM'}`;
+            
+        } catch (error) {
+            dateToReturn = '';
+        }
+        return dateToReturn;
+    },
+    replaceAll: (string, search, replace) => {
+        if (string === null) return "";
+        return string.split(search).join(replace);
     }
 }
 

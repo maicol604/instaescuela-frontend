@@ -143,7 +143,7 @@ const AccountTabs = ({accounts}) => {
                             <div className='description'>
                                 <span className='account'><h3>{pane.username}</h3><span className='type'>{pane.type}</span></span>
                                 <span className='name'>{pane.name}</span>
-                                <span  style={{whiteSpace:'pre-line'}}>{pane.bio}</span>
+                                <span  style={{whiteSpace:'pre-line'}}>{pane.biography}</span>
                                 <span><a href={pane.website} target='_blank'>{pane.website}</a></span>
                             </div>
                             <div className='numbers-info'>
@@ -153,7 +153,7 @@ const AccountTabs = ({accounts}) => {
                                         <span>Followers</span> 
                                     </div>
                                     <div>
-                                        <h3>{utils.getNumber(pane.following)}</h3>
+                                        <h3>{utils.getNumber(pane.follows_count)}</h3>
                                         <span>Followings</span> 
                                     </div>
                                     <div>

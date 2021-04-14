@@ -137,67 +137,29 @@ const a = {
 function App() {
 
   const [state, setState] = useState({
-    accounts:[]
+    accounts:[],
+    posts:[]
   })
 
-  useEffect(()=>{/*
+  useEffect(()=>{
+
     axios({
       method: "POST",
       url: url,
       data: {username:"instaescuela"},
     })
     .then(data => {
-      console.log(data.data);
+      console.log(data.data.profile.business_discovery);
       if(!data.data.error){
         let aux = state.accounts;
-        aux.push(data.data.profile);
-        setState({...state, accounts:aux})
-        console.log(utils.getHashtagFromPost(data.data.profile.lastPosts))
+        let posts = data.data.profile.business_discovery.media.data;
+        aux.push(data.data.profile.business_discovery);
+        setState({...state, accounts:aux, posts: posts})
+        //.log(utils.getHashtagFromPost(data.data.profile.lastPosts))
       }
     })
     .catch((error)=>console.error(error));
-    axios({
-      method: "POST",
-      url: url,
-      data: {username:"maicol604"},
-    })
-    .then(data => {
-      console.log(data.data);
-      if(!data.data.error){
-        let aux = state.accounts;
-        aux.push(data.data.profile);
-        setState({...state, accounts:aux})
-        console.log(utils.getHashtagFromPost(data.data.profile.lastPosts))
-      }
-    })
-    .catch((error)=>console.error(error));*/
-    axios({
-      method: "GET",
-      url: 'http://localhost:4000/test',
-      //data: {username:"instaescuela"},
-    })
-    .then(data => {
-      console.log(data.data);
-      /*if(!data.data.error){
-        let aux = state.accounts;
-        aux.push(data.data.profile);
-        setState({...state, accounts:aux})
-        console.log(utils.getHashtagFromPost(data.data.profile.lastPosts))
-      }*/
-    })
-    .catch((error)=>console.error(error));
-    fetch('https://graph.facebook.com/v10.0/17841435541882686?_activeScenarioIDs=[]&_activeScenarios=[]&fields=business_discovery.username(instaescuela){profile_picture_url,username,followers_count,media_count,media{comments_count,caption,like_count,media_type,media_ur,media_product_type,timestamp}}&transport=cors&access_token=EAAE7S1ZCabhABAHx3HrTruZBwdoLMN4gkweyvSbuNzCSecgC5HwxxVTmZAiRh4wGwi3ZC1cwQ09Y0CLaqwtNk6GvhZCeqaEY2WKvgsOaZB6esnxgBgiwNo2TQxEgZBVf3jvdXT1iEZAvs5p5e2nLTJ7XqRBG3ZBnFVZCJwYkaCCkHUcAZDZD')
-    .then(resp=>resp.json())
-    .then(data => {
-      console.log(data);
-      if(!data.error){
-        let aux = state.accounts;
-        aux.push(data.business_discovery);
-        setState({...state, accounts:aux})
-        //console.log(utils.getHashtagFromPost(data.data.profile.lastPosts))
-      }
-    })
-    .catch((error)=>console.error(error));
+    
   },[]);
 
   return (
@@ -207,7 +169,11 @@ function App() {
           accounts={state.accounts}
         />
         <HorizontalMenu/>
-        <Posts posts={[]}/>
+        <Switch>
+          <Route path="/posts">
+            <Posts posts={state.posts}/>
+          </Route>
+        </Switch>
       </Router>
     </div>
   );

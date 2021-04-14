@@ -5,6 +5,7 @@
   --main-text-color: #252222;
   --secondary-text-color: #7c7a7a;
   --main-color: #D04C4C;
+  --soft-border-color: #e8e8e8;
 }
 .pointer {
   cursor: pointer;
