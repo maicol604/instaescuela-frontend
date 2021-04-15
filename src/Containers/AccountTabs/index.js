@@ -92,20 +92,27 @@ const TabsWrapper = styled.div`
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                div {
+                align-items: center;
+                >div {
                     text-align: center;
+                    width: max-content;
                 }
                 .engagement-values {
                     display: flex;
                     flex-direction: column;
                     margin-top: 1em;
                     font-weight: 600;
+                    width: max-content;
                     .range-active {
+                        border: 1px solid var(--soft-border-color);
+                        border-radius: .25em;
+                        background-color: var(--hastag-bg-color);
+                        padding: .25em 1em;
                         &.successfully{
-                            color: var(--successfully-color);
+                            //border-color: var(--successfully-color);
                         }
                         &.error{
-                            color: var(--error-color);
+                            //border-color: var(--error-color);
                         }
                     }
                 }
@@ -231,7 +238,7 @@ const AccountTabs = ({accounts}) => {
                                 </div>
                                 <div className='engagement-data'>
                                     <div>
-                                        <Progress type="circle" percent={(2.4/3.8)*100} format={()=><div className='progress-children'><span className='value'>2.4</span><span className='title'>Engagement</span><span className='title'>rate</span></div>} width={100} status="exception"/>
+                                        <Progress type="circle" percent={(pane.engagement/3.8)*100}  width={100} status={(((pane.engagement/3.8)*100)>100)?"exception":""} format={()=><div className='progress-children'><span className='value'>{pane.engagement}</span><span className='title'>Engagement</span><span className='title'>rate</span></div>}/>
                                         {/*<Progress type="circle" percent={70} status="exception" />*/}
                                     </div>
                                     <div className='engagement-values'>

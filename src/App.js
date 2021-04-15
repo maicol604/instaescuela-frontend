@@ -34,12 +34,12 @@ function App() {
       data: {username:"instaescuela"},
     })
     .then(data => {
-      //console.log(data)
-      if(data && !data.data.profile.error){
-        console.log(data.data.profile.business_discovery);
+      console.log(data)
+      if(data && !data.data.error){
+        console.log(data.data.business_discovery);
         let aux = state.accounts;
-        let posts = data.data.profile.business_discovery.media.data;
-        aux.push(data.data.profile.business_discovery);
+        let posts = data.data.business_discovery.media.data;
+        aux.push(data.data.business_discovery);
         setState({...state, accounts:aux, posts: posts})
         //.log(utils.getHashtagFromPost(data.data.profile.lastPosts))
       }

@@ -64,6 +64,9 @@ const utils = {
         if (string === null) return "";
         return string.split(search).join(replace);
     },
+    findRange: (value) => {
+        
+    }
 }
 
 export default utils;
