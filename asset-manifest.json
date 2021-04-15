@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/instaescuela-frontend/static/css/main.e36b84ff.chunk.css",
-    "main.js": "/instaescuela-frontend/static/js/main.05131ceb.chunk.js",
-    "main.js.map": "/instaescuela-frontend/static/js/main.05131ceb.chunk.js.map",
-    "runtime-main.js": "/instaescuela-frontend/static/js/runtime-main.b0a4860c.js",
-    "runtime-main.js.map": "/instaescuela-frontend/static/js/runtime-main.b0a4860c.js.map",
+    "main.js": "/instaescuela-frontend/static/js/main.cb8c5db1.chunk.js",
+    "main.js.map": "/instaescuela-frontend/static/js/main.cb8c5db1.chunk.js.map",
+    "runtime-main.js": "/instaescuela-frontend/static/js/runtime-main.e4eb77ca.js",
+    "runtime-main.js.map": "/instaescuela-frontend/static/js/runtime-main.e4eb77ca.js.map",
     "static/css/2.26ca8a35.chunk.css": "/instaescuela-frontend/static/css/2.26ca8a35.chunk.css",
-    "static/js/2.62346c91.chunk.js": "/instaescuela-frontend/static/js/2.62346c91.chunk.js",
-    "static/js/2.62346c91.chunk.js.map": "/instaescuela-frontend/static/js/2.62346c91.chunk.js.map",
-    "static/js/3.fab0993f.chunk.js": "/instaescuela-frontend/static/js/3.fab0993f.chunk.js",
-    "static/js/3.fab0993f.chunk.js.map": "/instaescuela-frontend/static/js/3.fab0993f.chunk.js.map",
+    "static/js/2.854ac800.chunk.js": "/instaescuela-frontend/static/js/2.854ac800.chunk.js",
+    "static/js/2.854ac800.chunk.js.map": "/instaescuela-frontend/static/js/2.854ac800.chunk.js.map",
+    "static/js/3.6b4802d1.chunk.js": "/instaescuela-frontend/static/js/3.6b4802d1.chunk.js",
+    "static/js/3.6b4802d1.chunk.js.map": "/instaescuela-frontend/static/js/3.6b4802d1.chunk.js.map",
     "index.html": "/instaescuela-frontend/index.html",
     "static/css/2.26ca8a35.chunk.css.map": "/instaescuela-frontend/static/css/2.26ca8a35.chunk.css.map",
     "static/css/main.e36b84ff.chunk.css.map": "/instaescuela-frontend/static/css/main.e36b84ff.chunk.css.map",
-    "static/js/2.62346c91.chunk.js.LICENSE.txt": "/instaescuela-frontend/static/js/2.62346c91.chunk.js.LICENSE.txt",
+    "static/js/2.854ac800.chunk.js.LICENSE.txt": "/instaescuela-frontend/static/js/2.854ac800.chunk.js.LICENSE.txt",
     "static/media/instagram.c1cb19ae.svg": "/instaescuela-frontend/static/media/instagram.c1cb19ae.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b0a4860c.js",
+    "static/js/runtime-main.e4eb77ca.js",
     "static/css/2.26ca8a35.chunk.css",
-    "static/js/2.62346c91.chunk.js",
+    "static/js/2.854ac800.chunk.js",
     "static/css/main.e36b84ff.chunk.css",
-    "static/js/main.05131ceb.chunk.js"
+    "static/js/main.cb8c5db1.chunk.js"
   ]
 }
