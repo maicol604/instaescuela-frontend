@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { Tabs } from 'antd';
+import { Tabs, Progress } from 'antd';
 import styled from 'styled-components';
 
 import ig from '../../Assets/Img/instagram.svg';
@@ -88,6 +88,28 @@ const TabsWrapper = styled.div`
                     }
                 }
             }
+            .engagement-data {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                div {
+                    text-align: center;
+                }
+                .engagement-values {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 1em;
+                    font-weight: 600;
+                    .range-active {
+                        &.successfully{
+                            color: var(--successfully-color);
+                        }
+                        &.error{
+                            color: var(--error-color);
+                        }
+                    }
+                }
+            }
         }
     }
     .ant-tabs-top > .ant-tabs-nav, .ant-tabs-bottom > .ant-tabs-nav, .ant-tabs-top > div > .ant-tabs-nav, .ant-tabs-bottom > div > .ant-tabs-nav {
@@ -100,7 +122,53 @@ const TabsWrapper = styled.div`
     .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
         color: var(--main-text-color);
     }
+    .progress-children {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .title {
+            font-size: .5em;
+        }
+        .value {
+            margin-bottom: .25em;
+        }
+    }
 `;
+
+const EngagementValues = [
+    {
+        min: 100,
+        max: 500,
+        percent: 11.5
+    },
+    {
+        min: 500,
+        max: 1000,
+        percent: 8.4
+    },
+    {
+        min: 1000,
+        max: 5000,
+        percent: 5.7
+    },
+    {
+        min: 5000,
+        max: 10000,
+        percent: 4.2
+    },
+    {
+        min: 10000,
+        max: 50000,
+        percent: 3.8
+    },
+    {
+        min: 50000,
+        max: 50000000000,
+        percent: 1.9
+    },
+];
+
+const engagementValue = 2.4;
 
 const { TabPane } = Tabs;
 
@@ -161,8 +229,23 @@ const AccountTabs = ({accounts}) => {
                                         <span>Posts</span> 
                                     </div>
                                 </div>
-                                <div>
-                                    Select
+                                <div className='engagement-data'>
+                                    <div>
+                                        <Progress type="circle" percent={(2.4/3.8)*100} format={()=><div className='progress-children'><span className='value'>2.4</span><span className='title'>Engagement</span><span className='title'>rate</span></div>} width={100} status="exception"/>
+                                        {/*<Progress type="circle" percent={70} status="exception" />*/}
+                                    </div>
+                                    <div className='engagement-values'>
+                                        {
+                                            EngagementValues.map((data, index)=>{
+                                                let flag = pane.followers_count>data.min && pane.followers_count<data.max;
+                                                return (
+                                                    <div key={index} className={flag?('range-active '+'error'):''}>
+                                                        {data.max>5000000000?`More than ${utils.getNumber(data.min)} followers: ${data.percent}`:`From ${utils.getNumber(data.min)} to ${utils.getNumber(data.max)} followers: ${data.percent}`}
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>

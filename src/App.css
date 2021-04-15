@@ -6,6 +6,8 @@
   --secondary-text-color: #7c7a7a;
   --main-color: #D04C4C;
   --soft-border-color: #e8e8e8;
+  --successfully-color: #52c41a;
+  --error-color: #ff4d4f;
 }
 .pointer {
   cursor: pointer;

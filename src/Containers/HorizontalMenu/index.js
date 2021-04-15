@@ -53,7 +53,7 @@ const HorizontalMenu = () => {
     return (
         <HorizontalMenuWrapper>
             {options.map((option,index)=>
-                <NavLink key={index} to={option.url} activeClassName='menu-item-active'>
+                <NavLink key={index} to={option.url} activeClassName='menu-item-active' exact>
                     <div className={'pointer menu-item'}>
                         {option.title}
                     </div>
