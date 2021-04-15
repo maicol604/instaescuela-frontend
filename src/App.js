@@ -17,7 +17,7 @@ import Posts from './Pages/Public/Posts';
 import axios from 'axios';
 import utils from './Utils';
 
-const url='http://localhost:4000/getProfile';
+const url='https://boiling-coast-31813.herokuapp.com/getProfile';
 
 function App() {
 

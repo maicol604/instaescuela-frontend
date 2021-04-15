@@ -1,6 +1,6 @@
 {
   "homepage": "https://maicol604.github.io/instaescuela-frontend",
-  "name": "instaescuela",
+  "name": "instaescuela-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
