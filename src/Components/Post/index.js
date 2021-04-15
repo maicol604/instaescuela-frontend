@@ -62,7 +62,7 @@ const Post = ({data, avatar, userName}) => {
                         <img src={data.media_url} alt=''/>
                         <div className='image-footer'>
                             <div className='media-type'>{data.media_type==='IMAGE'?'Photo':'Carousel'}</div>
-                            <div className='engagement'>Engagement</div>
+                            <div className='engagement'>{`${utils.round(data.engagement)}%`} Engagement</div>
                         </div>
                     </span>
                     <div className='content'>
