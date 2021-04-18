@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import styled from 'styled-components';
 import { Doughnut } from 'react-chartjs-2';
 
@@ -20,9 +20,23 @@ const colors = [
     '#CF5E91',
     '#C65880',
     '#A26FA4',
-]
+];
+
+function useWindowSize() {
+    const [size, setSize] = useState([0, 0]);
+    useLayoutEffect(() => {
+      function updateSize() {
+        setSize([window.innerWidth, window.innerHeight]);
+      }
+      window.addEventListener('resize', updateSize);
+      updateSize();
+      return () => window.removeEventListener('resize', updateSize);
+    }, []);
+    return size;
+}
 
 const PieChart = ({data}) => {
+    const [width, height] = useWindowSize();
     const config = {
         labels: [
           ...data.map(item=>item.type)
@@ -36,9 +50,19 @@ const PieChart = ({data}) => {
           hoverOffset: 4
         }]
     };
+    
+    const options = {
+        legend: {
+            position: (width>1140)?'right':'bottom',
+        },
+        //circumference: Math.PI,
+        //rotation: 1.0 * Math.PI,
+        cutoutPercentage: 70
+    }
+    
     return (
         <PieWrapper>
-            <Doughnut data={{...config}} />
+            <Doughnut data={{...config}} options={options} width={50} height={50}/>
         </PieWrapper>
     )
 };

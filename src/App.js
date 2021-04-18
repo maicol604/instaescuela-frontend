@@ -41,8 +41,9 @@ function App() {
         let posts = data.data.business_discovery.media.data;
         let hashtag = data.data.business_discovery.hashtag;
         let hashtag_count = data.data.business_discovery.hashtag_count;
+        let stats = data.data.business_discovery.stats.data;
         aux.push(data.data.business_discovery);
-        setState({...state, accounts:aux, posts: posts, hashtag, hashtag_count})
+        setState({...state, accounts:aux, posts: posts, hashtag, hashtag_count, stats})
         //.log(utils.getHashtagFromPost(data.data.profile.lastPosts))
       }
     })
@@ -64,7 +65,9 @@ function App() {
             />
           </Route>
           <Route path="/historic">
-            <HistoricStats/>
+            <HistoricStats
+              stats={state.stats}
+            />
           </Route>
           <Route path="/demographics">
             <Demographics/>

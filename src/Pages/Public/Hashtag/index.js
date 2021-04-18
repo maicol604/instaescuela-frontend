@@ -30,7 +30,7 @@ const Hashtag = ({ hashtag, count}) => {
             <Row
                 gutter={[10, 10]}
             >
-                <Col xs={{ span: 24 }} md={{span: 12}} lg={{ span: 12 }}>
+                <Col xs={{ span: 24 }} md={{span: 12}} lg={{ span: 12 }} style={{display: 'flex'}}>
                     <Card
                         title={'Top 10 hashtags'}
                     >
