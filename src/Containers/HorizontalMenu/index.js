@@ -20,6 +20,10 @@ const options = [
         url:'/mentions'
     },
     {
+        title:'Hashtag',
+        url:'/hashtag'
+    },
+    {
         title:'Historic Stats',
         url:'/historic'
     },

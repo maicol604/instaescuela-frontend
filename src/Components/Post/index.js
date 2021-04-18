@@ -59,9 +59,17 @@ const Post = ({data, avatar, userName}) => {
                         <div className='date'>{utils.formatDate(data.timestamp)+''}</div>
                     </div>
                     <span className='post-image'>
-                        <img src={data.media_url} alt=''/>
+                        {data.media_type!=='VIDEO'?
+                            <img src={data.media_url} alt=''/>
+                        :
+                            <video src={data.media_url} alt='' controls="controls"/>
+                        } 
                         <div className='image-footer'>
-                            <div className='media-type'>{data.media_type==='IMAGE'?'Photo':'Carousel'}</div>
+                            {data.media_type!=='VIDEO'?
+                                <div className='media-type'>{data.media_type==='IMAGE'?'Photo':'Carousel'}</div>
+                                :
+                                <div className='media-type'>Video</div>
+                            }
                             <div className='engagement'>{`${utils.round(data.engagement)}%`} Engagement</div>
                         </div>
                     </span>

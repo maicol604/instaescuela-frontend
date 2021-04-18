@@ -63,9 +63,6 @@ const utils = {
     replaceAll: (string, search, replace) => {
         if (string === null) return "";
         return string.split(search).join(replace);
-    },
-    findRange: (value) => {
-        
     }
 }
 

@@ -38,7 +38,7 @@ const Posts = ({posts}) => {
                         <Col xs={{ span: 24 }} md={{span: 12}} lg={{ span: 8 }} key={index}>
                             <Post
                                 data={data}
-                                avatar={'https://scontent.fccs5-1.fna.fbcdn.net/v/t51.2885-15/160749207_1118035928708171_7198024186681508085_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=86c713&_nc_ohc=gAUSSR9kURMAX-Ebt47&_nc_ht=scontent.fccs5-1.fna&oh=8c05a3732e9c81925abb3eac0f8f6abf&oe=609CA294'}
+                                avatar={'https://scontent-lga3-1.xx.fbcdn.net/v/t51.2885-15/36912147_333497493855464_191442841459752960_n.jpg?_nc_cat=1&ccb=1-3&_nc_sid=86c713&_nc_ohc=2NgT-kuv8WIAX8vrWJl&_nc_ht=scontent-lga3-1.xx&oh=1244dea710bdb805fa349297b351d186&oe=609D836E'}
                                 userName='instaescuela'
                             />
                         </Col>

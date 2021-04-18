@@ -238,7 +238,7 @@ const AccountTabs = ({accounts}) => {
                                 </div>
                                 <div className='engagement-data'>
                                     <div>
-                                        <Progress type="circle" percent={(pane.engagement/3.8)*100}  width={100} status={(((pane.engagement/3.8)*100)>100)?"exception":""} format={()=><div className='progress-children'><span className='value'>{pane.engagement}</span><span className='title'>Engagement</span><span className='title'>rate</span></div>}/>
+                                        <Progress type="circle" percent={(utils.round(pane.engagement)/3.8)*100}  width={100} status={(((utils.round(pane.engagement)/3.8)*100)<100)?"exception":""} format={()=><div className='progress-children'><span className='value'>{utils.round(pane.engagement)}</span><span className='title'>Engagement</span><span className='title'>rate</span></div>}/>
                                         {/*<Progress type="circle" percent={70} status="exception" />*/}
                                     </div>
                                     <div className='engagement-values'>
