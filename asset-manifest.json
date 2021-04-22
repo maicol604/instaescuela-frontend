@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/instaescuela-frontend/static/css/main.36b999cb.chunk.css",
-    "main.js": "/instaescuela-frontend/static/js/main.233cfb00.chunk.js",
-    "main.js.map": "/instaescuela-frontend/static/js/main.233cfb00.chunk.js.map",
+    "main.css": "/instaescuela-frontend/static/css/main.e433d183.chunk.css",
+    "main.js": "/instaescuela-frontend/static/js/main.e883f910.chunk.js",
+    "main.js.map": "/instaescuela-frontend/static/js/main.e883f910.chunk.js.map",
     "runtime-main.js": "/instaescuela-frontend/static/js/runtime-main.df6a782a.js",
     "runtime-main.js.map": "/instaescuela-frontend/static/js/runtime-main.df6a782a.js.map",
     "static/css/2.26ca8a35.chunk.css": "/instaescuela-frontend/static/css/2.26ca8a35.chunk.css",
-    "static/js/2.3d11eec7.chunk.js": "/instaescuela-frontend/static/js/2.3d11eec7.chunk.js",
-    "static/js/2.3d11eec7.chunk.js.map": "/instaescuela-frontend/static/js/2.3d11eec7.chunk.js.map",
+    "static/js/2.ca90eca4.chunk.js": "/instaescuela-frontend/static/js/2.ca90eca4.chunk.js",
+    "static/js/2.ca90eca4.chunk.js.map": "/instaescuela-frontend/static/js/2.ca90eca4.chunk.js.map",
     "static/js/3.9d3df4f0.chunk.js": "/instaescuela-frontend/static/js/3.9d3df4f0.chunk.js",
     "static/js/3.9d3df4f0.chunk.js.map": "/instaescuela-frontend/static/js/3.9d3df4f0.chunk.js.map",
     "index.html": "/instaescuela-frontend/index.html",
     "static/css/2.26ca8a35.chunk.css.map": "/instaescuela-frontend/static/css/2.26ca8a35.chunk.css.map",
-    "static/css/main.36b999cb.chunk.css.map": "/instaescuela-frontend/static/css/main.36b999cb.chunk.css.map",
-    "static/js/2.3d11eec7.chunk.js.LICENSE.txt": "/instaescuela-frontend/static/js/2.3d11eec7.chunk.js.LICENSE.txt",
+    "static/css/main.e433d183.chunk.css.map": "/instaescuela-frontend/static/css/main.e433d183.chunk.css.map",
+    "static/js/2.ca90eca4.chunk.js.LICENSE.txt": "/instaescuela-frontend/static/js/2.ca90eca4.chunk.js.LICENSE.txt",
     "static/media/instagram.c1cb19ae.svg": "/instaescuela-frontend/static/media/instagram.c1cb19ae.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.df6a782a.js",
     "static/css/2.26ca8a35.chunk.css",
-    "static/js/2.3d11eec7.chunk.js",
-    "static/css/main.36b999cb.chunk.css",
-    "static/js/main.233cfb00.chunk.js"
+    "static/js/2.ca90eca4.chunk.js",
+    "static/css/main.e433d183.chunk.css",
+    "static/js/main.e883f910.chunk.js"
   ]
 }
