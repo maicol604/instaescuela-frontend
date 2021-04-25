@@ -24,7 +24,7 @@ const HashtagWrapper = styled.div`
     }
 `;
 
-const Hashtag = ({ hashtag, count}) => {
+const Hashtag = ({ hashtag, count, key}) => {
     return (
         <HashtagWrapper>
             <Row
@@ -38,8 +38,8 @@ const Hashtag = ({ hashtag, count}) => {
                             {
                                 hashtag.slice(0,10).map((data, index)=>{
                                     return (
-                                        <span className='hashtag-item'>
-                                            {`# ${data.caption} ${Utils.round((data.count/count)*100)}%`} 
+                                        <span className='hashtag-item' key={index}>
+                                            {`#${data.caption} ${Utils.round((data.count/count)*100)}%`} 
                                         </span>
                                     )
                                 })
@@ -53,6 +53,7 @@ const Hashtag = ({ hashtag, count}) => {
                     >
                         <PieChart
                             data={hashtag.slice(0,10).map(data=>{return {value: data.count, type: '#'+data.caption}})}
+                            id={ key }
                         />
                     </Card>
                 </Col>
@@ -64,7 +65,7 @@ const Hashtag = ({ hashtag, count}) => {
                             {
                                 hashtag.map((data, index)=>{
                                     return (
-                                        <span className='hashtag-item'>
+                                        <span className='hashtag-item' key={index}>
                                             #{ data.caption }
                                         </span>
                                     )

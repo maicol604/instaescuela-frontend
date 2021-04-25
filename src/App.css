@@ -8,6 +8,10 @@
   --soft-border-color: #e8e8e8;
   --successfully-color: #52c41a;
   --error-color: #ff4d4f;
+  --more-bg-color: #d9f7be;
+  --less-bg-color: #ffccc7;
+  --more-color: #52c41a;
+  --less-color: #f5222d;
 }
 .pointer {
   cursor: pointer;
@@ -19,5 +23,8 @@ body {
   background-color: var(--bg-color);
 }
 .App {
-  padding: 0 4em;
+}
+h3 {
+  font-weight: 600;
+  font-size: 1.25em;
 }

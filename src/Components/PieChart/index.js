@@ -35,7 +35,7 @@ function useWindowSize() {
     return size;
 }
 
-const PieChart = ({data}) => {
+const PieChart = ({data, id}) => {
     const [width, height] = useWindowSize();
     const config = {
         labels: [
@@ -61,7 +61,7 @@ const PieChart = ({data}) => {
     }
     
     return (
-        <PieWrapper>
+        <PieWrapper key={id}>
             <Doughnut data={{...config}} options={options} width={50} height={50}/>
         </PieWrapper>
     )
@@ -69,6 +69,7 @@ const PieChart = ({data}) => {
 
 PieChart.defaultProps = {
     data: [],
+    id:0,
 }
 
 export default PieChart;

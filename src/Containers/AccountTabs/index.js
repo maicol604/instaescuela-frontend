@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React from 'react';
 import { Tabs, Progress } from 'antd';
 import styled from 'styled-components';
 
@@ -179,14 +179,10 @@ const engagementValue = 2.4;
 
 const { TabPane } = Tabs;
 
-const AccountTabs = ({accounts}) => {
-
-    const [state, setState] = useState({
-        activeKey:'0'
-    });
+const AccountTabs = ({accounts, onChange, activeKey}) => {
 
     const handleChange = (activeKey) => {
-        setState({...state, activeKey});
+        onChange(parseInt(activeKey))
     }
 
     const userTabTitle = (data) => {
@@ -205,7 +201,7 @@ const AccountTabs = ({accounts}) => {
             <Tabs
                 hideAdd
                 onChange={handleChange}
-                activeKey={state.activeKey}
+                activeKey={`${activeKey}`}
                 type="editable-card"
             >
                 {accounts.map((pane, index) => (
