@@ -80,9 +80,12 @@ const Overview = ({stats}) => {
                 diference = stats[i].followers_count.count-stats[i].followers_count.prev_count;
             averageDailyGrowth = averageDailyGrowth + diference;
         }
-        averageDailyGrowth = averageDailyGrowth / stats.length;
-        last7daysFollowerGrowth = last7daysFollowerGrowth / 7;
-        last30daysFollowerGrowth = last30daysFollowerGrowth / 30;
+        if(averageDailyGrowth!==0)
+            averageDailyGrowth = averageDailyGrowth / stats.length;
+        if(last7daysFollowerGrowth!==0)
+            last7daysFollowerGrowth = last7daysFollowerGrowth / 7;
+        if(last30daysFollowerGrowth!==0)
+            last30daysFollowerGrowth = last30daysFollowerGrowth / 30;
         setState({
             ...state, 
             averageDailyGrowth,

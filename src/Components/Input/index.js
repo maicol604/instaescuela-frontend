@@ -18,10 +18,11 @@ const InputContainer = styled.div`
         position: absolute;
         right: 1em;
         top: .5em;
+        cursor: pointer;
     }
 `;
 
-const Input = ({placeholder, onChange, onSearch}) => {
+const Input = ({placeholder, onChange, onSearch, value}) => {
 
     const hanldeChange = (e) => {
         let value = e.target.value;
@@ -30,7 +31,7 @@ const Input = ({placeholder, onChange, onSearch}) => {
 
     return (
         <InputContainer>
-            <InputWrapper placeholder={placeholder} onChange={hanldeChange}/>
+            <InputWrapper placeholder={placeholder} onChange={hanldeChange} value={value}/>
             <span className='icon-container' onClick={onSearch}><SearchOutlined /></span>
         </InputContainer>
     )
@@ -38,6 +39,7 @@ const Input = ({placeholder, onChange, onSearch}) => {
 
 Input.defaultProps = {
     placeholder: '',
+    value:''
 }
 
 export default Input;

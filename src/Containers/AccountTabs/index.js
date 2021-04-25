@@ -179,7 +179,7 @@ const engagementValue = 2.4;
 
 const { TabPane } = Tabs;
 
-const AccountTabs = ({accounts, onChange, activeKey}) => {
+const AccountTabs = ({accounts, onChange, activeKey, removeAccount}) => {
 
     const handleChange = (activeKey) => {
         onChange(parseInt(activeKey))
@@ -196,6 +196,10 @@ const AccountTabs = ({accounts, onChange, activeKey}) => {
         )
     }
 
+    const handleEdit = (data) => {
+        removeAccount(parseInt(data));
+    }
+
     return (
         <TabsWrapper>
             <Tabs
@@ -203,6 +207,7 @@ const AccountTabs = ({accounts, onChange, activeKey}) => {
                 onChange={handleChange}
                 activeKey={`${activeKey}`}
                 type="editable-card"
+                onEdit={handleEdit}
             >
                 {accounts.map((pane, index) => (
                     <TabPane tab={userTabTitle(pane)} key={`${index}`}>

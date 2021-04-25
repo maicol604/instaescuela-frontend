@@ -76,6 +76,20 @@ function App() {
     setState(users);
   }
 
+  const handleRemove = (key) => {
+    let aux = state.accounts.slice(0);
+    aux.splice(key,1);
+    let users;
+    if(!state.userActive)
+      users = {...state, accounts:aux, userActive: aux[0] };
+    else
+      if(key>0)
+        users = {...state, accounts:aux, userActive: aux[key-1], indexActive:key-1 };
+      else
+        users = {...state, accounts:aux, userActive: aux[key], indexActive:key };
+    setState(users);
+  }
+
   return (
     <usersContext.Provider value={state}>
       <div className='App'>
@@ -88,19 +102,23 @@ function App() {
               accounts={state.accounts}
               onChange={handleChangeUser}
               activeKey={state.indexActive}
+              removeAccount = {handleRemove}
             /> 
-            <HorizontalMenu/>
+            {state.userActive?
+              <HorizontalMenu/>
+              :''
+            }
             <Switch>
               <Route path="/" exact>
                 {state.userActive?
                   <React.Fragment>
                     <Overview 
-                      stats={state.userActive.stats.data}
+                      stats={state.userActive.stats?state.userActive.stats.data:[]}
                     />
                     <Engagement
                       averageLikes = {state.userActive.average_likes}
                       averageComment = {state.userActive.average_comments}
-                      averageEngagement = {state.userActive.stats.data.slice(0,30).map(item=>Utils.round(item.engagement_rate.count))}
+                      averageEngagement = {state.userActive.stats?state.userActive.stats.data.slice(0,30).map(item=>Utils.round(item.engagement_rate.count)):[]}
                       postingHabits = {state.userActive.posting_habit_count}
                       engagement = {state.userActive.engagement}
                       followers = {state.userActive.followers_count}
@@ -113,13 +131,14 @@ function App() {
                 {state.userActive?
                 <Posts 
                   posts={state.userActive.media.data}
+                  avatar={state.userActive.profile_picture_url}
                 />
                 :''}
               </Route>
               <Route path="/historic">
                 {state.userActive?
                   <HistoricStats
-                    stats={state.userActive.stats.data}
+                    stats={state.userActive.stats?state.userActive.stats.data:[]}
                   />
                 :''}
               </Route>

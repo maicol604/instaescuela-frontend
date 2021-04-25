@@ -54,7 +54,11 @@ const Header = ({ onSearch }) => {
             data: { username: search },
         })
         .then(data => {
-            onSearch(data);
+            console.log(data)
+            if(data && !data.data.error){
+                onSearch(data);
+                setSearch('');
+            }
         })
         .catch((error)=>{
         console.error(error);
@@ -72,13 +76,14 @@ const Header = ({ onSearch }) => {
                         placeholder='Search accounts'
                         onChange={handleChange}
                         onSearch = { handleSearch }
+                        value={search}
                     />
                 </div>
             </div>
             <div className='right-box'>
                 menu
                 <div>
-                    Avatar
+                        
                 </div>
             </div>
         </HeaderWrapper>
