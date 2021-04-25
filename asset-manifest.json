@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/instaescuela-frontend/static/css/main.e433d183.chunk.css",
-    "main.js": "/instaescuela-frontend/static/js/main.d38c9a7d.chunk.js",
-    "main.js.map": "/instaescuela-frontend/static/js/main.d38c9a7d.chunk.js.map",
+    "main.js": "/instaescuela-frontend/static/js/main.da1ad9ae.chunk.js",
+    "main.js.map": "/instaescuela-frontend/static/js/main.da1ad9ae.chunk.js.map",
     "runtime-main.js": "/instaescuela-frontend/static/js/runtime-main.3172f033.js",
     "runtime-main.js.map": "/instaescuela-frontend/static/js/runtime-main.3172f033.js.map",
     "static/css/2.26ca8a35.chunk.css": "/instaescuela-frontend/static/css/2.26ca8a35.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.26ca8a35.chunk.css",
     "static/js/2.21f32e7f.chunk.js",
     "static/css/main.e433d183.chunk.css",
-    "static/js/main.d38c9a7d.chunk.js"
+    "static/js/main.da1ad9ae.chunk.js"
   ]
 }
