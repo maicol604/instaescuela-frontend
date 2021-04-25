@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Input from '../../Components/Input';
@@ -23,13 +23,16 @@ const HeaderWrapper = styled.div`
     }
 `;
 
-const Header = () => {
+const Header = ({ onSearch }) => {
+
+    const [search, setSearch] = useState('');
 
     const handleChange = (event) => {
-        /*const url='https://www.instagram.com/web/search/topsearch/?context=blended&query=${instaescuela}';
-        console.log(event.value);
+        //const url='https://www.instagram.com/web/search/topsearch/?context=blended&query=${instaescuela}';
+        //console.log(event.value);
         let { value } = event;
-        axios({
+        setSearch(value);
+        /*axios({
             method: "POST",
             url: url,
             data: { query: value },
@@ -42,6 +45,22 @@ const Header = () => {
         });*/
     }
 
+    const handleSearch = () => {
+        const url='https://boiling-coast-31813.herokuapp.com/getProfile';
+        //console.log(event.value);
+        axios({
+            method: "POST",
+            url: url,
+            data: { username: search },
+        })
+        .then(data => {
+            onSearch(data);
+        })
+        .catch((error)=>{
+        console.error(error);
+        });
+    }
+
     return (
         <HeaderWrapper>
             <div className='left-box'>
@@ -52,6 +71,7 @@ const Header = () => {
                     <Input
                         placeholder='Search accounts'
                         onChange={handleChange}
+                        onSearch = { handleSearch }
                     />
                 </div>
             </div>

@@ -20,6 +20,7 @@ import Engagement from './Pages/Public/Engagement';
 
 import axios from 'axios';
 import { usersContext } from './Context';
+import Utils from './Utils';
 
 const url='https://boiling-coast-31813.herokuapp.com/getProfile';
 
@@ -64,10 +65,23 @@ function App() {
     setState({...state, userActive: state.accounts[index], indexActive:index});
   }
 
+  const handleSearch = (data) => {
+    let aux = state.accounts.slice(0);
+    aux.push(data.data.business_discovery);
+    let users;
+    if(!state.userActive)
+      users = {...state, accounts:aux, userActive: aux[0] };
+    else
+      users = {...state, accounts:aux, userActive: aux[aux.length-1], indexActive:aux.length-1 };
+    setState(users);
+  }
+
   return (
     <usersContext.Provider value={state}>
       <div className='App'>
-        <Header/>
+        <Header
+          onSearch = { handleSearch }
+        />
         <div style={{padding: '2em 4em'}}>
           <Router>
             <AccountTabs
@@ -79,10 +93,51 @@ function App() {
             <Switch>
               <Route path="/" exact>
                 {state.userActive?
-                <React.Fragment>
-                  <Overview 
-                    
+                  <React.Fragment>
+                    <Overview 
+                      stats={state.userActive.stats.data}
+                    />
+                    <Engagement
+                      averageLikes = {state.userActive.average_likes}
+                      averageComment = {state.userActive.average_comments}
+                      averageEngagement = {state.userActive.stats.data.slice(0,30).map(item=>Utils.round(item.engagement_rate.count))}
+                      postingHabits = {state.userActive.posting_habit_count}
+                      engagement = {state.userActive.engagement}
+                      followers = {state.userActive.followers_count}
+                      key={state.indexActive}
+                    />
+                  </React.Fragment>
+                :''}
+              </Route>
+              <Route path="/posts">
+                {state.userActive?
+                <Posts 
+                  posts={state.userActive.media.data}
+                />
+                :''}
+              </Route>
+              <Route path="/historic">
+                {state.userActive?
+                  <HistoricStats
+                    stats={state.userActive.stats.data}
                   />
+                :''}
+              </Route>
+              <Route path="/demographics">
+                <Demographics/>
+              </Route>
+              <Route path="/hashtag">
+                {state.userActive?
+                  <Hashtag
+                    hashtag={state.userActive.hashtag}
+                    count={state.userActive.hashtag_count}
+                    key={state.indexActive}
+                  />
+                :''
+                }
+              </Route>
+              <Route path="/engagement">
+                {state.userActive?
                   <Engagement
                     averageLikes = {state.userActive.average_likes}
                     averageComment = {state.userActive.average_comments}
@@ -92,46 +147,7 @@ function App() {
                     followers = {state.userActive.followers_count}
                     key={state.indexActive}
                   />
-                </React.Fragment>
-                :''}
-              </Route>
-              <Route path="/posts">
-                {state.userActive?
-                <Posts 
-                  posts={state.userActive.posts}
-                />
-                :''}
-              </Route>
-              <Route path="/historic">
-                <HistoricStats
-                  stats={state.stats}
-                />
-              </Route>
-              <Route path="/demographics">
-                <Demographics/>
-              </Route>
-              <Route path="/hashtag">
-                {state.userActive?
-                <Hashtag
-                  hashtag={state.userActive.hashtag}
-                  count={state.userActive.hashtag_count}
-                  key={state.indexActive}
-                />
                 :''
-                }
-              </Route>
-              <Route path="/engagement">
-                {state.userActive?
-                <Engagement
-                  averageLikes = {state.userActive.average_likes}
-                  averageComment = {state.userActive.average_comments}
-                  averageEngagement = {[]}
-                  postingHabits = {state.userActive.posting_habit_count}
-                  engagement = {state.userActive.engagement}
-                  followers = {state.userActive.followers_count}
-                  key={state.indexActive}
-                />
-                :'cargando'
                 }
               </Route>
             </Switch>

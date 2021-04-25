@@ -242,4 +242,8 @@ const Engagement = ({ averageLikes, averageComment, averageEngagement, postingHa
     )
 }
 
+Engagement.defaultProps = {
+    key:0,
+}
+
 export default Engagement;

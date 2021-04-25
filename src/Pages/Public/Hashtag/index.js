@@ -82,6 +82,7 @@ const Hashtag = ({ hashtag, count, key}) => {
 Hashtag.defaultProps = {
     hashtag:[],
     hashtag_count: 0,
+    key:0
 }
 
 export default Hashtag;

@@ -91,22 +91,22 @@ const columns = [
       }
     },
     {
-      title: 'Engagement Rate',
-      dataIndex: 'engagement_rate',
-      key: 'engagement_rate',
-      render: (item) => {
-        let diference = 0;
-        if(item.count!==item.prev_count && item.prev_count!==0)
-            diference = item.count-item.prev_count;
-        return (
-            <span className='bold'>
-                {Utils.round(item.count)}
-                {diference!==0?
-                    <span className={diference>0?'less':'less'}>{`${diference>0?'+':''}${diference}`}</span>
-                :''}
-            </span>
-        )
-      }
+        title: 'Engagement Rate',
+        dataIndex: 'engagement_rate',
+        key: 'engagement_rate',
+        render: (item) => {
+            let diference = 0;
+            if(item.prev_count && Utils.round(item.count)!==Utils.round(item.prev_count) && item.prev_count!==0)
+                diference = Utils.round(item.count)-Utils.round(item.prev_count);
+            return (
+                <span className='bold'>
+                    {`${Utils.round(item.count)}%`}
+                    {diference!==0?
+                        <span className={diference>0?'less':'less'}>{`${diference>0?'+':''}${Utils.round(diference)}`}</span>
+                    :''}
+                </span>
+            )
+        }
     },
 ];
 

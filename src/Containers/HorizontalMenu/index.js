@@ -7,18 +7,18 @@ const options = [
         title:'Overview',
         url:'/'
     },
-    {
+    /*{
         title:'Demographics',
         url:'/demographics'
-    },
+    },*/
     {
         title:'Engagement',
         url:'/engagement'
     },
-    {
+    /*{
         title:'Mentions',
         url:'/mentions'
-    },
+    },*/
     {
         title:'Hashtag',
         url:'/hashtag'

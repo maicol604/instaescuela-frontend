@@ -21,7 +21,7 @@ const InputContainer = styled.div`
     }
 `;
 
-const Input = ({placeholder, onChange}) => {
+const Input = ({placeholder, onChange, onSearch}) => {
 
     const hanldeChange = (e) => {
         let value = e.target.value;
@@ -30,8 +30,8 @@ const Input = ({placeholder, onChange}) => {
 
     return (
         <InputContainer>
-            <InputWrapper placeholder={placeholder} onChange={hanldeChange  }/>
-            <span className='icon-container'><SearchOutlined /></span>
+            <InputWrapper placeholder={placeholder} onChange={hanldeChange}/>
+            <span className='icon-container' onClick={onSearch}><SearchOutlined /></span>
         </InputContainer>
     )
 }

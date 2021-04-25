@@ -50,11 +50,10 @@ const utils = {
         ];
         let dateToReturn;
         try {
-            let newDate = new Date(date);
+            let newDate = new Date(date.split(/.[0-9]*Z/)[0]);
             let hour = parseInt(date.split('T')[1].split(':')[0])
             let hours = (hour>12)?(hour-12):hour;
             dateToReturn = `${months[newDate.getMonth()]} ${newDate.getDate()}, ${newDate.getFullYear()} ${hours}:${newDate.getMinutes()} ${(hour>12)?'PM':'AM'}`;
-            
         } catch (error) {
             dateToReturn = '';
         }
