@@ -48,7 +48,7 @@ const columns = [
             <span className='bold'>
                 {item.count}
                 {diference!==0?
-                    <span className={diference>0?'less':'less'}>{`${diference>0?'+':''}${diference}`}</span>
+                    <span className={diference>0?'more':'less'}>{`${diference>0?'+':''}${diference}`}</span>
                 :''}
             </span>
         )
@@ -66,7 +66,7 @@ const columns = [
             <span className='bold'>
                 {item.count}
                 {diference!==0?
-                    <span className={diference>0?'less':'less'}>{`${diference>0?'+':''}${diference}`}</span>
+                    <span className={diference>0?'more':'less'}>{`${diference>0?'+':''}${diference}`}</span>
                 :''}
             </span>
         )
@@ -84,7 +84,7 @@ const columns = [
             <span className='bold'>
                 {item.count}
                 {diference!==0?
-                    <span className={diference>0?'less':'less'}>{`${diference>0?'+':''}${diference}`}</span>
+                    <span className={diference>0?'more':'less'}>{`${diference>0?'+':''}${diference}`}</span>
                 :''}
             </span>
         )
@@ -102,7 +102,7 @@ const columns = [
                 <span className='bold'>
                     {`${Utils.round(item.count)}%`}
                     {diference!==0?
-                        <span className={diference>0?'less':'less'}>{`${diference>0?'+':''}${Utils.round(diference)}`}</span>
+                        <span className={diference>0?'more':'less'}>{`${diference>0?'+':''}${Utils.round(diference)}`}</span>
                     :''}
                 </span>
             )

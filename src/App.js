@@ -67,7 +67,7 @@ function App() {
 
   const handleSearch = (data) => {
     let aux = state.accounts.slice(0);
-    aux.push(data.data.business_discovery);
+    aux.push(data);
     let users;
     if(!state.userActive)
       users = {...state, accounts:aux, userActive: aux[0] };
@@ -114,6 +114,7 @@ function App() {
                   <React.Fragment>
                     <Overview 
                       stats={state.userActive.stats?state.userActive.stats.data:[]}
+                      key={state.userActive.username}
                     />
                     <Engagement
                       averageLikes = {state.userActive.average_likes}
@@ -132,6 +133,7 @@ function App() {
                 <Posts 
                   posts={state.userActive.media.data}
                   avatar={state.userActive.profile_picture_url}
+                  key={state.userActive.username}
                 />
                 :''}
               </Route>
@@ -139,6 +141,7 @@ function App() {
                 {state.userActive?
                   <HistoricStats
                     stats={state.userActive.stats?state.userActive.stats.data:[]}
+                    key={state.userActive.username}
                   />
                 :''}
               </Route>
@@ -151,6 +154,7 @@ function App() {
                     hashtag={state.userActive.hashtag}
                     count={state.userActive.hashtag_count}
                     key={state.indexActive}
+                    key={state.userActive.username}
                   />
                 :''
                 }
@@ -164,7 +168,7 @@ function App() {
                     postingHabits = {state.userActive.posting_habit_count}
                     engagement = {state.userActive.engagement}
                     followers = {state.userActive.followers_count}
-                    key={state.indexActive}
+                    key={state.userActive.username}
                   />
                 :''
                 }
