@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/instaescuela-frontend/static/css/main.e433d183.chunk.css",
-    "main.js": "/instaescuela-frontend/static/js/main.56bac4eb.chunk.js",
-    "main.js.map": "/instaescuela-frontend/static/js/main.56bac4eb.chunk.js.map",
+    "main.js": "/instaescuela-frontend/static/js/main.415bcadc.chunk.js",
+    "main.js.map": "/instaescuela-frontend/static/js/main.415bcadc.chunk.js.map",
     "runtime-main.js": "/instaescuela-frontend/static/js/runtime-main.f4195083.js",
     "runtime-main.js.map": "/instaescuela-frontend/static/js/runtime-main.f4195083.js.map",
     "static/css/2.26ca8a35.chunk.css": "/instaescuela-frontend/static/css/2.26ca8a35.chunk.css",
-    "static/js/2.6e959145.chunk.js": "/instaescuela-frontend/static/js/2.6e959145.chunk.js",
-    "static/js/2.6e959145.chunk.js.map": "/instaescuela-frontend/static/js/2.6e959145.chunk.js.map",
+    "static/js/2.ae21b025.chunk.js": "/instaescuela-frontend/static/js/2.ae21b025.chunk.js",
+    "static/js/2.ae21b025.chunk.js.map": "/instaescuela-frontend/static/js/2.ae21b025.chunk.js.map",
     "static/js/3.7ab0641f.chunk.js": "/instaescuela-frontend/static/js/3.7ab0641f.chunk.js",
     "static/js/3.7ab0641f.chunk.js.map": "/instaescuela-frontend/static/js/3.7ab0641f.chunk.js.map",
     "index.html": "/instaescuela-frontend/index.html",
     "static/css/2.26ca8a35.chunk.css.map": "/instaescuela-frontend/static/css/2.26ca8a35.chunk.css.map",
     "static/css/main.e433d183.chunk.css.map": "/instaescuela-frontend/static/css/main.e433d183.chunk.css.map",
-    "static/js/2.6e959145.chunk.js.LICENSE.txt": "/instaescuela-frontend/static/js/2.6e959145.chunk.js.LICENSE.txt",
+    "static/js/2.ae21b025.chunk.js.LICENSE.txt": "/instaescuela-frontend/static/js/2.ae21b025.chunk.js.LICENSE.txt",
     "static/media/instagram.c1cb19ae.svg": "/instaescuela-frontend/static/media/instagram.c1cb19ae.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f4195083.js",
     "static/css/2.26ca8a35.chunk.css",
-    "static/js/2.6e959145.chunk.js",
+    "static/js/2.ae21b025.chunk.js",
     "static/css/main.e433d183.chunk.css",
-    "static/js/main.56bac4eb.chunk.js"
+    "static/js/main.415bcadc.chunk.js"
   ]
 }
