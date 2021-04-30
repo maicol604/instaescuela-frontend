@@ -8,6 +8,7 @@ import PieChart from '../../../Components/PieChart';
 
 
 const HashtagWrapper = styled.div`
+    width: 100%;
     .hashtag-container {
         width: 100%;
         display: inline-block;
@@ -28,7 +29,7 @@ const Hashtag = ({ hashtag, count, key}) => {
     return (
         <HashtagWrapper>
             <Row
-                gutter={[10, 10]}
+                gutter={[15, 15]}
             >
                 <Col xs={{ span: 24 }} md={{span: 12}} lg={{ span: 12 }} style={{display: 'flex'}}>
                     <Card

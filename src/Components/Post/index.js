@@ -9,6 +9,7 @@ const PostWrapper = styled.div`
     border-radius: 1em;
     box-shadow: 10px -10px 150px rgba(0, 0, 0, 0.1);
     background-color: var(--secondary-bg-color);
+    width: 100%;
     .content {
         padding: 1em;
     }

@@ -6,13 +6,18 @@ const ButtonWrapper = styled.div`
 
 `;
 
-const Button = ({ children, onClick }) => {
+const Button = ({ children, onClick, style, primary, disabled }) => {
     const handleClick = () => {
-        onClick();
+        if(onClick)
+            onClick();
     }
     return (
-        <ButtonWrapper onClick={handleClick}>
-            <ButtonAntd>
+        <ButtonWrapper onClick={handleClick} style={style}>
+            <ButtonAntd 
+                style={{width: '100%',}} 
+                type={primary?'danger':''} 
+                disabled = { disabled }
+            >
                 { children }
             </ButtonAntd>
         </ButtonWrapper>
@@ -20,7 +25,7 @@ const Button = ({ children, onClick }) => {
 }
 
 Button.defaultProps = {
-    
+    onClick: ()=>{},
 }
 
 export default Button;

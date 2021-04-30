@@ -39,6 +39,7 @@ const HorizontalMenuWrapper = styled.div`
     border-radius: .5em;
     margin-bottom: 1em;
     display: flex;
+    width: 100%;
     .menu-item {
         font-weight: 600;
         width: max-content;

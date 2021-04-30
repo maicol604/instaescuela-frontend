@@ -11,7 +11,7 @@ const ChartWrapper = styled.div`
 const LineChart = ({ title, data }) => {
   console.log(data)
   const config = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: [...new Array(30).fill(0).map((data,index)=>`${index+1}`)],
     datasets: [
       {
         label: title,

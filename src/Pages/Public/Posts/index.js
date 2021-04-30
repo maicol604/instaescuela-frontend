@@ -31,7 +31,7 @@ const Posts = ({posts, avatar}) => {
     return (
         <PostsWrapper>
             <Row
-                gutter={[10, 10]}
+                gutter={[15, 15]}
             >
                 {posts.slice(0,postCount).map((data,index)=>{
                     return (

@@ -7,6 +7,7 @@ const HistoricStatsWrapper = styled.div`
     padding: 1em;
     background-color: var(--secondary-bg-color);
     border-radius: .5em;
+    width: 100%;
     .stats-container {
         .bold {
             font-weight: 600;

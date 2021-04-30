@@ -167,7 +167,7 @@ const Engagement = ({ averageLikes, averageComment, averageEngagement, postingHa
     return (
         <EngagementWrapper>
             <Row
-                gutter={[10, 10]}
+                gutter={[15, 15]}
             >
                 <Col xs={{ span: 24 }} md={{span: 24}} lg={{ span: 24 }}>
                     <Card
@@ -244,6 +244,7 @@ const Engagement = ({ averageLikes, averageComment, averageEngagement, postingHa
 
 Engagement.defaultProps = {
     key:0,
+    averageEngagement:[]
 }
 
 export default Engagement;

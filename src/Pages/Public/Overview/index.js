@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import { Row, Col } from 'antd';
 import Card from '../../../Components/Card';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+import utils from '../../../Utils';
 
 const OverviewWrapper = styled.div`
+    width: 100%;
+    margin-bottom: 1em;
     .average-card {
         padding: 0 1em 1em 1em;
         h2 {
@@ -98,13 +101,13 @@ const Overview = ({stats}) => {
     return (
         <OverviewWrapper>
         <Row
-            gutter={[10, 10]}
+            gutter={[15, 15]}
         >
             <Col xs={{ span: 24 }} md={{span: 12}} lg={{ span: 6 }} style={{display: 'flex'}}>
                 <Card
                 >
                     <div className='average-card'>
-                        <h2>{state.last7daysFollowerGrowth!==0?state.last7daysFollowerGrowth:'-'}</h2>
+                        <h2>{state.last7daysFollowerGrowth!==0?utils.round(state.last7daysFollowerGrowth):'-'}</h2>
                         <div className='title-container'>
                             Last 7 days follower growth  
                         </div>
@@ -115,7 +118,7 @@ const Overview = ({stats}) => {
                 <Card
                 >
                     <div className='average-card'>
-                        <h2>{state.last30daysFollowerGrowth!==0?state.last30daysFollowerGrowth:'-'}</h2>
+                        <h2>{state.last30daysFollowerGrowth!==0?utils.round(state.last30daysFollowerGrowth):'-'}</h2>
                         <div className='title-container'>
                             Last 30 days Follower Growth 
                         </div>
@@ -127,7 +130,7 @@ const Overview = ({stats}) => {
                 >
                     <div className='average-card'>
                         <h2>
-                            {state.averageDailyGrowth!==0?state.averageDailyGrowth:'-'}
+                            {state.averageDailyGrowth!==0?utils.round(state.averageDailyGrowth):'-'}
                             {state.averageDailyGrowth>0?<span className={'arrow-up'}><ArrowUpOutlined /></span>:''}
                             {state.averageDailyGrowth<0?<span className={'arrow-down'}><ArrowDownOutlined /></span>:''}
                         </h2>
@@ -141,7 +144,7 @@ const Overview = ({stats}) => {
                 <Card
                 >
                     <div className='average-card'>
-                        <h2>{state.averageMonthlyGrowth!==0?state.averageMonthlyGrowth:'-'}</h2>
+                        <h2>{state.averageMonthlyGrowth!==0?utils.round(state.averageMonthlyGrowth):'-'}</h2>
                         <div className='title-container'>
                             Average monthly growth 
                         </div>

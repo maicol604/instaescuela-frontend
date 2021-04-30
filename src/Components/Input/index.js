@@ -7,6 +7,7 @@ const InputWrapper = styled.input`
     background-color: var(--hastag-bg-color);
     border: 1px solid var(--soft-border-color);
     border-radius: .5em;
+    width: 100%;
     &:focus {
         outline: none;
     }
@@ -22,24 +23,25 @@ const InputContainer = styled.div`
     }
 `;
 
-const Input = ({placeholder, onChange, onSearch, value}) => {
+const Input = ({placeholder, onChange, onSearch, value, style, search, name}) => {
 
     const hanldeChange = (e) => {
         let value = e.target.value;
-        onChange({ value });
+        onChange({ value, name });
     }
 
     return (
-        <InputContainer>
+        <InputContainer style={style}>
             <InputWrapper placeholder={placeholder} onChange={hanldeChange} value={value}/>
-            <span className='icon-container' onClick={onSearch}><SearchOutlined /></span>
+            {search?<span className='icon-container' onClick={onSearch}><SearchOutlined /></span>:''}
         </InputContainer>
     )
 }
 
 Input.defaultProps = {
     placeholder: '',
-    value:''
+    value:'',
+    name:'',
 }
 
 export default Input;

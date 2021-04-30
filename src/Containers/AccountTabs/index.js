@@ -22,6 +22,7 @@ const TitleWrapper = styled.div`
 
 const TabsWrapper = styled.div`
     padding: 1em 0;
+    width: 100%;
     h3 {
         font-size: 2.25em;
         font-weight: 600;

@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Dropdown, Spin } from 'antd';
+import { Link, useLocation  } from 'react-router-dom';
+import { InstagramOutlined } from '@ant-design/icons';
 
 import Input from '../../Components/Input';
-import axios from 'axios';
-import { Dropdown, Spin } from 'antd';
 import Avatar from '../../Components/Avatar';
+import Button from '../../Components/Button';
+
+import searchService from '../../Services/Search';
 
 const HeaderWrapper = styled.div`
 
@@ -40,51 +44,25 @@ const Header = ({ onSearch }) => {
     const [users, setUsers] = useState([]);
     const [searching, setSearching] = useState(false);
 
+    const location = useLocation();
 
     const handleChange = (event) => {
         let { value } = event;
         setSearch(value)
         setSearching(true);
-        const url='https://boiling-coast-31813.herokuapp.com/getProfile';
-        axios({
-            method: "POST",
-            url: url,
-            data: { username: value },
-        })
-        .then(data => {
-            console.log(data)
+        searchService.searchUser({ username: value },
+        (data)=>{
             setSearching(false);
-            if(data && !data.data.error){
-                let aux = [];
-                aux.push(data.data.business_discovery);
-                console.log(aux)
-                setUsers(aux);
-            }
-        })
-        .catch((error)=>{
-            console.error(error);
+            setUsers(data);
         });
     }
 
     const handleSearch = () => {
         setSearching(true);
-        const url='https://boiling-coast-31813.herokuapp.com/getProfile';
-        axios({
-            method: "POST",
-            url: url,
-            data: { username: search },
-        })
-        .then(data => {
+        searchService.searchUser({ username: search },
+        (data)=>{
             setSearching(false);
-            if(data && !data.data.error){
-                let aux = [];
-                aux.push(data.data.business_discovery);
-                console.log(aux)
-                setUsers(aux);
-            }
-        })
-        .catch((error)=>{
-            console.error(error);
+            setUsers(data);
         });
     }   
 
@@ -98,7 +76,7 @@ const Header = ({ onSearch }) => {
         <HeaderWrapper>
             <div className='left-box'>
                 <div>
-                    Logo
+                    <Link to='/'><InstagramOutlined /></Link>
                 </div>
                 <div className='search-box'>
                     <Dropdown
@@ -124,19 +102,32 @@ const Header = ({ onSearch }) => {
                         }
                         visible={users.length>0 || searching}
                     >
-                        <Input
-                            placeholder='Search accounts'
-                            onChange={handleChange}
-                            onSearch = { handleSearch }
-                            value={search}
-                        />
+                        <span>
+                            {
+                                (location.pathname!=='/register' && location.pathname!=='/login')?
+                                <Input
+                                    placeholder='Search accounts'
+                                    onChange={handleChange}
+                                    onSearch = { handleSearch }
+                                    value={search}
+                                    search
+                                />
+                                :''
+                            }
+                        </span>
                     </Dropdown>
                 </div>
             </div>
             <div className='right-box'>
-                menu
                 <div>
-                        
+                    <Link to='/login'>
+                        <Button style={{marginRight:'1em'}}>Sign in</Button>
+                    </Link>
+                </div>
+                <div>
+                    <Link to='/register'>
+                        <Button primary>Create a Free Account</Button>
+                    </Link>
                 </div>
             </div>
         </HeaderWrapper>
